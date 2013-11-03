@@ -66,8 +66,8 @@
     <properties>
         <jackson.version>1.9.12</jackson.version>
         <logback.version>1.0.13</logback.version>
-        <spring.version>3.2.2.RELEASE</spring.version>
-        <spring.security.version>3.1.4.RELEASE</spring.security.version>
+        <spring.version>3.2.4.RELEASE</spring.version>
+        <spring.security.version>3.2.0.RC2</spring.security.version>
         <spring.oauth.version>1.0.5.RELEASE</spring.oauth.version>
         <spock.version>0.7-groovy-2.0</spock.version>
     </properties>
@@ -209,6 +209,12 @@
 
             <dependency>
                 <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-core</artifactId>
                 <version>${spring.security.version}</version>
             </dependency>
@@ -220,12 +226,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-javaconfig</artifactId>
-                <version>1.0.0.M1</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.springframework.security.oauth</groupId>
                 <artifactId>spring-security-oauth2</artifactId>
                 <version>${spring.oauth.version}</version>
@@ -233,6 +233,18 @@
                     <exclusion>
                         <groupId>org.springframework</groupId>
                         <artifactId>spring-jdbc</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2-javaconfig</artifactId>
+                <version>1.0.0.M1</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-security-javaconfig</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
