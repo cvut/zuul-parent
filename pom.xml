@@ -51,13 +51,28 @@
         </license>
     </licenses>
 
+    <distributionManagement>
+        <repository>
+            <id>cvut-libs-release-local</id>
+            <name>CVUT Release Repository</name>
+            <url>http://repository.fit.cvut.cz/maven/libs-release-local/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>cvut-libs-snapshot-local</id>
+            <name>CVUT Snapshot Repository</name>
+            <url>http://repository.fit.cvut.cz/maven/libs-snapshot-local/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
 
     <!--//////////////////// MODULES ////////////////////-->
 
     <modules>
         <module>zuul-oaas</module>
+        <module>zuul-oauth-provider-spring</module>
         <module>zuul-samples</module>
-        <module>zuul-provider-spring</module>
     </modules>
 
 
@@ -67,7 +82,7 @@
         <jackson.version>1.9.12</jackson.version>
         <logback.version>1.0.13</logback.version>
         <spring.version>3.2.4.RELEASE</spring.version>
-        <spring.security.version>3.2.0.RC2</spring.security.version>
+        <spring.security.version>3.2.0.RELEASE</spring.security.version>
         <spring.oauth.version>1.0.5.RELEASE</spring.oauth.version>
         <spock.version>0.7-groovy-2.0</spock.version>
     </properties>
