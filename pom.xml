@@ -21,7 +21,6 @@
 
     <name>Project Zuul</name>
     <inceptionYear>2012</inceptionYear>
-    <description>OAuth 2.0 security solutions</description>
 
     <developers>
         <developer>
@@ -70,8 +69,8 @@
     <!--//////////////////// MODULES ////////////////////-->
 
     <modules>
+        <module>zuul-spring-support</module>
         <module>zuul-oaas</module>
-        <module>zuul-oauth-provider-spring</module>
         <module>zuul-samples</module>
     </modules>
 
@@ -84,6 +83,7 @@
         <spring.version>3.2.4.RELEASE</spring.version>
         <spring.security.version>3.2.0.RELEASE</spring.security.version>
         <spring.oauth.version>1.0.5.RELEASE</spring.oauth.version>
+        <spring.ldap.version>1.3.1.RELEASE</spring.ldap.version>
         <spock.version>0.7-groovy-2.0</spock.version>
     </properties>
 
@@ -100,6 +100,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>cz.cvut.zuul</groupId>
+                <artifactId>zuul-spring-support</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 
             <!-- JSR 315 Java Servlet  -->
             <dependency>
@@ -241,6 +246,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-ldap</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.springframework.security.oauth</groupId>
                 <artifactId>spring-security-oauth2</artifactId>
                 <version>${spring.oauth.version}</version>
@@ -260,6 +271,18 @@
                     <exclusion>
                         <groupId>org.springframework.security</groupId>
                         <artifactId>spring-security-javaconfig</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.ldap</groupId>
+                <artifactId>spring-ldap-core</artifactId>
+                <version>${spring.ldap.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
