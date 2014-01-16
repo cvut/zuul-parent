@@ -1,0 +1,9 @@
+[submodule "zuul-oaas"]
+	path = zuul-oaas
+	url = git@github.com:cvut/zuul-oaas.git
+[submodule "zuul-samples"]
+	path = zuul-samples
+	url = git@github.com:cvut/zuul-samples.git
+[submodule "zuul-spring-support"]
+	path = zuul-spring-support
+	url = git@github.com:cvut/zuul-spring-support.git
