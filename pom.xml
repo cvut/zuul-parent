@@ -109,17 +109,21 @@
             </dependency>
 
             <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>17.0</version>
+            </dependency>
+
+            <dependency>
                 <groupId>cz.cvut.zuul</groupId>
                 <artifactId>zuul-spring-support</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-
-            <!-- JSR 315 Java Servlet  -->
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
-                <scope>provided</scope>
             </dependency>
 
             <!-- JSR 250 Common Annotations -->
@@ -137,11 +141,43 @@
                 <version>1</version>
             </dependency>
 
+            <!-- JSR 315 Java Servlet  -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- JSR 303 Bean Validation -->
             <dependency>
                 <groupId>javax.validation</groupId>
                 <artifactId>validation-api</artifactId>
                 <version>1.0.0.GA</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.3.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-core-asl</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
 
             <!-- Implementation of JSR 303 -->
@@ -158,36 +194,6 @@
             </dependency>
 
             <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>${logback.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>3.3.2</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>17.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-core-asl</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-mapper-asl</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
                 <version>${spring.version}</version>
@@ -195,6 +201,18 @@
                     <exclusion>
                         <artifactId>commons-logging</artifactId>
                         <groupId>commons-logging</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.ldap</groupId>
+                <artifactId>spring-ldap-core</artifactId>
+                <version>${spring.ldap.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -223,25 +241,14 @@
                 </exclusions>
             </dependency>
 
-            <dependency>
-                <groupId>org.springframework.ldap</groupId>
-                <artifactId>spring-ldap-core</artifactId>
-                <version>${spring.ldap.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-
-            <dependency>
-                <groupId>org.codehaus.groovy</groupId>
-                <artifactId>groovy</artifactId>
-                <version>${groovy.version}</version>
-            </dependency>
-
             <!--//// Test ////-->
+
+            <dependency>
+                <groupId>net.java.quickcheck</groupId>
+                <artifactId>quickcheck</artifactId>
+                <version>0.6</version>
+                <scope>test</scope>
+            </dependency>
 
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
@@ -269,14 +276,6 @@
                 <version>${spock.version}</version>
                 <scope>test</scope>
             </dependency>
-
-            <dependency>
-                <groupId>net.java.quickcheck</groupId>
-                <artifactId>quickcheck</artifactId>
-                <version>0.6</version>
-                <scope>test</scope>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
