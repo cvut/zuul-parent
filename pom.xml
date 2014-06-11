@@ -136,6 +136,12 @@
                 <version>1.0.0.M1</version>
             </dependency>
 
+            <dependency>
+                <groupId>cz.jirutka.spring</groupId>
+                <artifactId>spring-rest-exception-handler</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
             <!-- Collection validators for JSR-303 -->
             <dependency>
                 <groupId>cz.jirutka.validator</groupId>
