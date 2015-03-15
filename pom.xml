@@ -81,9 +81,8 @@
         <bootstrap.version>3.0.0</bootstrap.version>
         <jackson.version>2.4.5</jackson.version>
         <logback.version>1.1.2</logback.version>
-        <jetty.version>9.2.10.v20150310</jetty.version>
         <spring.version>4.1.4.RELEASE</spring.version>
-        <spring-boot.version>1.0.2.RELEASE</spring-boot.version>
+        <spring-boot.version>1.2.1.RELEASE</spring-boot.version>
         <spring-security.version>3.2.3.RELEASE</spring-security.version>
         <spring-security-oauth.version>2.0.6.RELEASE</spring-security-oauth.version>
         <spring-ldap.version>2.0.2.RELEASE</spring-ldap.version>
@@ -222,18 +221,6 @@
                 <version>3.3.2</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-webapp</artifactId>
-                <version>${jetty.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.eclipse.jetty</groupId>
-                        <artifactId>jetty-xml</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-
             <!-- Required for hibernate-validator -->
             <dependency>
                 <groupId>org.glassfish</groupId>
@@ -295,9 +282,22 @@
                 <artifactId>spring-boot-starter-jetty</artifactId>
                 <version>${spring-boot.version}</version>
                 <exclusions>
+                    <!-- Excluded because not needed. -->
                     <exclusion>
                         <groupId>org.eclipse.jetty</groupId>
                         <artifactId>jetty-jsp</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.eclipse.jetty</groupId>
+                        <artifactId>jetty-xml</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.eclipse.jetty.websocket</groupId>
+                        <artifactId>websocket-server</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.eclipse.jetty.websocket</groupId>
+                        <artifactId>javax-websocket-server-impl</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
