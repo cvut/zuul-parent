@@ -79,7 +79,8 @@
 
     <properties>
         <bootstrap.version>3.0.0</bootstrap.version>
-        <jackson.version>1.9.12</jackson.version>
+        <jackson.version>2.4.5</jackson.version>
+        <jackson1.version>1.9.12</jackson1.version>
         <logback.version>1.1.2</logback.version>
         <jetty.version>9.1.4.v20140401</jetty.version>
         <spring.version>4.0.4.RELEASE</spring.version>
@@ -115,6 +116,24 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
 
             <dependency>
@@ -207,13 +226,13 @@
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-core-asl</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson1.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-mapper-asl</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson1.version}</version>
             </dependency>
 
             <dependency>
